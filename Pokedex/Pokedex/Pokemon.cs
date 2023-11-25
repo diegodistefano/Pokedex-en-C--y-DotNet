@@ -14,5 +14,7 @@ namespace Pokedex
 
         public string Descripcion { get; set; }
 
+        public string UrlImagen { get; set; }
+
     }
 }

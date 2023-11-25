@@ -12,6 +12,7 @@ namespace Pokedex
 {
     public partial class frmPokemons : Form
     {
+        private List<Pokemon> listaPokemon;
         public frmPokemons()
         {
             InitializeComponent();
@@ -20,7 +21,9 @@ namespace Pokedex
         private void Form1_Load(object sender, EventArgs e)
         {
             PokemonDatosNegocio negocio = new PokemonDatosNegocio();
-            dgvPokemons.DataSource = negocio.listar();
+            listaPokemon = negocio.listar();
+            dgvPokemons.DataSource = listaPokemon;
+            pbPokemons.Load(listaPokemon[0].UrlImagen);
 
         }
     }
