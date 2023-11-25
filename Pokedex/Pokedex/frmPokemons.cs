@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Pokedex
 {
-    public partial class Form1 : Form
+    public partial class frmPokemons : Form
     {
-        public Form1()
+        public frmPokemons()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            PokemonDatosNegocio negocio = new PokemonDatosNegocio();
+            dgvPokemons.DataSource = negocio.listar();
+
         }
     }
 }

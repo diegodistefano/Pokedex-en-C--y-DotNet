@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Pokedex
 {
-    class PokemonNegocio
+    class PokemonDatosNegocio
     {
         public List<Pokemon> listar() 
         {
@@ -37,8 +37,7 @@ namespace Pokedex
                     lista.Add(aux);
                 }
 
-
-
+                conexion.Close();
                 return lista;
             }
             catch (Exception Ex)

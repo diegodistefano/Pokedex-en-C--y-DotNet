@@ -7,3 +7,13 @@ C:\Users\Administrador\Desktop\Pokedex\Pokedex\Pokedex\obj\Debug\Pokedex.csproj.
 C:\Users\Administrador\Desktop\Pokedex\Pokedex\Pokedex\obj\Debug\Pokedex.csproj.CoreCompileInputs.cache
 C:\Users\Administrador\Desktop\Pokedex\Pokedex\Pokedex\obj\Debug\Pokedex.exe
 C:\Users\Administrador\Desktop\Pokedex\Pokedex\Pokedex\obj\Debug\Pokedex.pdb
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\bin\Debug\Pokedex.exe.config
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\bin\Debug\Pokedex.exe
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\bin\Debug\Pokedex.pdb
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\obj\Debug\Pokedex.csproj.AssemblyReference.cache
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\obj\Debug\Pokedex.frmPokemons.resources
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\obj\Debug\Pokedex.Properties.Resources.resources
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\obj\Debug\Pokedex.csproj.GenerateResource.cache
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\obj\Debug\Pokedex.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\obj\Debug\Pokedex.exe
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\obj\Debug\Pokedex.pdb
