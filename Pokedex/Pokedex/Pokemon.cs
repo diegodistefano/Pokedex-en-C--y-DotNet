@@ -18,5 +18,7 @@ namespace Pokedex
 
         public Elemento Tipo { get; set; }
 
+        public Elemento Debilidad { get; set; }
+
     }
 }
