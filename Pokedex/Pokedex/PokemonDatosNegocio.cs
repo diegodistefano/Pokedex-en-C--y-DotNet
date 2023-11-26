@@ -9,19 +9,18 @@ namespace Pokedex
 {
     class PokemonDatosNegocio
     {
-        public List<Pokemon> listar() 
+        public List<Pokemon> listar()
         {
             List<Pokemon> lista = new List<Pokemon>();
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
 
-
             try
             {
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=POKEDEX_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Select Numero, Nombre, Descripcion, UrlImagen from POKEMONS";
+                comando.CommandText = "Select Numero, Nombre, Descripcion, UrlImagen From POKEMONS";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -41,12 +40,10 @@ namespace Pokedex
                 conexion.Close();
                 return lista;
             }
-            catch (Exception Ex)
+            catch (Exception ex)
             {
-
-                throw Ex;
+                throw ex;
             }
-
 
         }
     }
