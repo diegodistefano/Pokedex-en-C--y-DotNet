@@ -20,7 +20,7 @@ namespace Pokedex
             {
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=POKEDEX_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Select Numero, Nombre, Descripcion, UrlImagen From POKEMONS";
+                comando.CommandText = "Select Numero, Nombre, P.Descripcion, UrlImagen, E.Descripcion Tipo From POKEMONS P, ELEMENTOS E Where E.Id = P.IdTipo";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -33,6 +33,9 @@ namespace Pokedex
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
                     aux.UrlImagen = (string)lector["UrlImagen"];
+
+                    aux.Tipo = new Elemento();
+                    aux.Tipo.Descripcion = (string)lector["Tipo"];
 
                     lista.Add(aux);
                 }

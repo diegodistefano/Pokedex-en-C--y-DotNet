@@ -24,6 +24,7 @@ namespace Pokedex
             PokemonDatosNegocio negocio = new PokemonDatosNegocio();
             listaPokemon = negocio.listar();
             dgvPokemons.DataSource = listaPokemon;
+            dgvPokemons.Columns["UrlImagen"].Visible = false;
             cargarImagen(listaPokemon[0].UrlImagen);
         }
 
@@ -39,10 +40,9 @@ namespace Pokedex
             {
                 pbxPokemon.Load(imagen);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 pbxPokemon.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
-                throw ex;
             }
         }
 
