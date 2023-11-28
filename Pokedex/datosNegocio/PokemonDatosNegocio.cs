@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using pokeDominio;
 
 namespace Pokedex
 {
-    class PokemonDatosNegocio
+    public class PokemonDatosNegocio
     {
         public List<Pokemon> listar()
         {

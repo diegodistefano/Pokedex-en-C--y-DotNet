@@ -8,3 +8,8 @@ C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\bin\Debug\Poked
 C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\bin\Debug\Pokedex.pdb
 C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\obj\Debug\Pokedex.exe
 C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\obj\Debug\Pokedex.pdb
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\bin\Debug\pokeDominio.dll
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\bin\Debug\pokeDominio.pdb
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\obj\Debug\Pokedex.csproj.CopyComplete
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\bin\Debug\datosNegocio.dll
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\Pokedex\bin\Debug\datosNegocio.pdb

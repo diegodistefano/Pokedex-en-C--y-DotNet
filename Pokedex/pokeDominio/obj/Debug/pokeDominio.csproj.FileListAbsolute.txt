@@ -1,0 +1,6 @@
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\pokeDominio\bin\Debug\pokeDominio.dll
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\pokeDominio\bin\Debug\pokeDominio.pdb
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\pokeDominio\obj\Debug\pokeDominio.csproj.AssemblyReference.cache
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\pokeDominio\obj\Debug\pokeDominio.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\pokeDominio\obj\Debug\pokeDominio.dll
+C:\Users\Administrador\Desktop\Pokedex en DotNet\Pokedex\pokeDominio\obj\Debug\pokeDominio.pdb
