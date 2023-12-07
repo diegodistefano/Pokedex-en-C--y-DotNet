@@ -54,5 +54,20 @@ namespace Pokedex
             }
 
         }
+
+        public void agregar(Pokemon nuevo)
+        {
+
+        }
+
+        public void modificar(Pokemon modificar)
+        {
+
+        }
+
+        public void eliminar(Pokemon eliminar)
+        {
+
+        }
     }
 }
