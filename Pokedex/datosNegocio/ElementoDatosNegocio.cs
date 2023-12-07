@@ -8,7 +8,7 @@ using pokeDominio;
 
 namespace datosNegocio
 {
-    class ElementoDatosNegocio
+    public class ElementoDatosNegocio
     {
         public List<Elemento> listar()
         {

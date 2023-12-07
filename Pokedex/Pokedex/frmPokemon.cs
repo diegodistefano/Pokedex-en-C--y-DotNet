@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using datosNegocio;
 using pokeDominio;
 
 namespace Pokedex
@@ -19,6 +20,8 @@ namespace Pokedex
             InitializeComponent();
         }
 
+        private List<Elemento> listaElementos;
+
 
         private void frmPokemon_Load(object sender, EventArgs e)
         {
@@ -27,11 +30,21 @@ namespace Pokedex
             dgvPokemons.DataSource = listaPokemon;
             dgvPokemons.Columns["UrlImagen"].Visible = false;
             cargarImagen(listaPokemon[0].UrlImagen);
+
+            ElementoDatosNegocio elementoDatos = new ElementoDatosNegocio();
+            listaElementos = elementoDatos.listar();
+            dgvElementos.DataSource = listaElementos;
         }
 
         private void dgvPokemons_SelectionChanged(object sender, EventArgs e)
         {
             Pokemon seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.UrlImagen);
+        }
+
+        private void dgvElementos_SelectionChanged(object sender, EventArgs e)
+        {
+            Pokemon seleccionado = (Pokemon)dgvElementos.CurrentRow.DataBoundItem;
             cargarImagen(seleccionado.UrlImagen);
         }
 
@@ -49,3 +62,4 @@ namespace Pokedex
 
     }
 }
+ 
