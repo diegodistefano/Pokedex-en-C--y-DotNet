@@ -60,6 +60,11 @@ namespace Pokedex
             }
         }
 
+        private void btnAgregarPokemon_Click(object sender, EventArgs e)
+        {
+            frmAltaPokemon altaPokemon = new frmAltaPokemon();
+            altaPokemon.ShowDialog();
+        }
     }
 }
  

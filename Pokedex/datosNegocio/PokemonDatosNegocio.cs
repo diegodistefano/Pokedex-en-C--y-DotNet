@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using pokeDominio;
+using datosNegocio;
 
 namespace Pokedex
 {
@@ -57,7 +58,23 @@ namespace Pokedex
 
         public void agregar(Pokemon nuevo)
         {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("Insert Into POKEMONS (Numero, Nombre, Descripcion, Activo, IdTipo, IdDebilidad) Values (" + nuevo.Numero + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', 1, @IdTipo, @IdDebilidad)");
+                datos.setearParametro("@IdTipo", nuevo.Tipo.Id);
+                datos.setearParametro("@IdDebilidad", nuevo.Debilidad.Id);
 
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
 
         public void modificar(Pokemon modificar)
