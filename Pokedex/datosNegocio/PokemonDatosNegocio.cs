@@ -34,7 +34,9 @@ namespace Pokedex
                     aux.Numero = lector.GetInt32(0);
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
-                    aux.UrlImagen = (string)lector["UrlImagen"];
+
+                    if(!(lector["UrlImagen"] is DBNull))
+                        aux.UrlImagen = (string)lector["UrlImagen"];
 
                     aux.Tipo = new Elemento();
                     aux.Tipo.Descripcion = (string)lector["Tipo"];

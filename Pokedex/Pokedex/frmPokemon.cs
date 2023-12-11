@@ -26,10 +26,17 @@ namespace Pokedex
         private void frmPokemon_Load(object sender, EventArgs e)
         {
             PokemonDatosNegocio negocio = new PokemonDatosNegocio();
-            listaPokemon = negocio.listar();
-            dgvPokemons.DataSource = listaPokemon;
-            dgvPokemons.Columns["UrlImagen"].Visible = false;
-            cargarImagen(listaPokemon[0].UrlImagen);
+            try
+            {
+                listaPokemon = negocio.listar();
+                dgvPokemons.DataSource = listaPokemon;
+                dgvPokemons.Columns["UrlImagen"].Visible = false;
+                cargarImagen(listaPokemon[0].UrlImagen);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
             ElementoDatosNegocio elementoDatos = new ElementoDatosNegocio();
             listaElementos = elementoDatos.listar();
