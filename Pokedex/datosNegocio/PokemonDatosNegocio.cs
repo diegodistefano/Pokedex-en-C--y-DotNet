@@ -63,9 +63,10 @@ namespace Pokedex
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("Insert Into POKEMONS (Numero, Nombre, Descripcion, Activo, IdTipo, IdDebilidad) Values (" + nuevo.Numero + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', 1, @IdTipo, @IdDebilidad)");
+                datos.setearConsulta("Insert Into POKEMONS (Numero, Nombre, Descripcion, UrlImagen, Activo, IdTipo, IdDebilidad) Values (" + nuevo.Numero + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', @UrlImagen, 1, @IdTipo, @IdDebilidad)");
                 datos.setearParametro("@IdTipo", nuevo.Tipo.Id);
                 datos.setearParametro("@IdDebilidad", nuevo.Debilidad.Id);
+                datos.setearParametro("@UrlImagen", nuevo.UrlImagen);
 
                 datos.ejecutarAccion();
             }

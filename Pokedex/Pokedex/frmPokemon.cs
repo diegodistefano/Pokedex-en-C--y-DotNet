@@ -25,18 +25,7 @@ namespace Pokedex
 
         private void frmPokemon_Load(object sender, EventArgs e)
         {
-            PokemonDatosNegocio negocio = new PokemonDatosNegocio();
-            try
-            {
-                listaPokemon = negocio.listar();
-                dgvPokemons.DataSource = listaPokemon;
-                dgvPokemons.Columns["UrlImagen"].Visible = false;
-                cargarImagen(listaPokemon[0].UrlImagen);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            cargar();
 
             ElementoDatosNegocio elementoDatos = new ElementoDatosNegocio();
             listaElementos = elementoDatos.listar();
@@ -54,6 +43,22 @@ namespace Pokedex
             Pokemon seleccionado = (Pokemon)dgvElementos.CurrentRow.DataBoundItem;
             cargarImagen(seleccionado.UrlImagen);
         }
+        
+        private void cargar()
+        {
+            PokemonDatosNegocio negocio = new PokemonDatosNegocio();
+            try
+            {
+                listaPokemon = negocio.listar();
+                dgvPokemons.DataSource = listaPokemon;
+                dgvPokemons.Columns["UrlImagen"].Visible = false;
+                cargarImagen(listaPokemon[0].UrlImagen);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
         private void cargarImagen(string imagen)
         {
@@ -61,7 +66,7 @@ namespace Pokedex
             {
                 pbxPokemon.Load(imagen);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 pbxPokemon.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }
@@ -71,6 +76,7 @@ namespace Pokedex
         {
             frmAltaPokemon altaPokemon = new frmAltaPokemon();
             altaPokemon.ShowDialog();
+            cargar();
         }
     }
 }

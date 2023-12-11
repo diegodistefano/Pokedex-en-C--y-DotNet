@@ -41,6 +41,10 @@ namespace Pokedex
             this.lblDebilidad = new System.Windows.Forms.Label();
             this.cboxTipo = new System.Windows.Forms.ComboBox();
             this.cboxDebilidad = new System.Windows.Forms.ComboBox();
+            this.lblUrlImagen = new System.Windows.Forms.Label();
+            this.txtUrlImagen = new System.Windows.Forms.TextBox();
+            this.pboxAlta = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAlta)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -58,7 +62,7 @@ namespace Pokedex
             this.lblNumero.Location = new System.Drawing.Point(41, 65);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
-            this.lblNumero.TabIndex = 1;
+            this.lblNumero.TabIndex = 2;
             this.lblNumero.Text = "Numero";
             // 
             // lblDescripcion
@@ -67,7 +71,7 @@ namespace Pokedex
             this.lblDescripcion.Location = new System.Drawing.Point(40, 92);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
-            this.lblDescripcion.TabIndex = 2;
+            this.lblDescripcion.TabIndex = 4;
             this.lblDescripcion.Text = "Descripcion";
             // 
             // txtNombre
@@ -75,14 +79,14 @@ namespace Pokedex
             this.txtNombre.Location = new System.Drawing.Point(138, 32);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(121, 20);
-            this.txtNombre.TabIndex = 3;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtNumero
             // 
             this.txtNumero.Location = new System.Drawing.Point(138, 60);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(121, 20);
-            this.txtNumero.TabIndex = 4;
+            this.txtNumero.TabIndex = 3;
             // 
             // txtDescripcion
             // 
@@ -93,20 +97,20 @@ namespace Pokedex
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(44, 223);
+            this.btnAgregar.Location = new System.Drawing.Point(138, 228);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 6;
+            this.btnAgregar.TabIndex = 12;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(148, 223);
+            this.btnCancelar.Location = new System.Drawing.Point(242, 228);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -114,7 +118,7 @@ namespace Pokedex
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(42, 124);
+            this.lblTipo.Location = new System.Drawing.Point(42, 146);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(28, 13);
             this.lblTipo.TabIndex = 8;
@@ -123,35 +127,64 @@ namespace Pokedex
             // lblDebilidad
             // 
             this.lblDebilidad.AutoSize = true;
-            this.lblDebilidad.Location = new System.Drawing.Point(42, 154);
+            this.lblDebilidad.Location = new System.Drawing.Point(42, 176);
             this.lblDebilidad.Name = "lblDebilidad";
             this.lblDebilidad.Size = new System.Drawing.Size(51, 13);
-            this.lblDebilidad.TabIndex = 9;
+            this.lblDebilidad.TabIndex = 10;
             this.lblDebilidad.Text = "Debilidad";
             // 
             // cboxTipo
             // 
             this.cboxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxTipo.FormattingEnabled = true;
-            this.cboxTipo.Location = new System.Drawing.Point(138, 121);
+            this.cboxTipo.Location = new System.Drawing.Point(138, 143);
             this.cboxTipo.Name = "cboxTipo";
             this.cboxTipo.Size = new System.Drawing.Size(121, 21);
-            this.cboxTipo.TabIndex = 10;
+            this.cboxTipo.TabIndex = 9;
             // 
             // cboxDebilidad
             // 
             this.cboxDebilidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxDebilidad.FormattingEnabled = true;
-            this.cboxDebilidad.Location = new System.Drawing.Point(138, 149);
+            this.cboxDebilidad.Location = new System.Drawing.Point(138, 171);
             this.cboxDebilidad.Name = "cboxDebilidad";
             this.cboxDebilidad.Size = new System.Drawing.Size(121, 21);
             this.cboxDebilidad.TabIndex = 11;
+            // 
+            // lblUrlImagen
+            // 
+            this.lblUrlImagen.AutoSize = true;
+            this.lblUrlImagen.Location = new System.Drawing.Point(40, 119);
+            this.lblUrlImagen.Name = "lblUrlImagen";
+            this.lblUrlImagen.Size = new System.Drawing.Size(58, 13);
+            this.lblUrlImagen.TabIndex = 6;
+            this.lblUrlImagen.Text = "Url Imagen";
+            // 
+            // txtUrlImagen
+            // 
+            this.txtUrlImagen.Location = new System.Drawing.Point(138, 115);
+            this.txtUrlImagen.Name = "txtUrlImagen";
+            this.txtUrlImagen.Size = new System.Drawing.Size(121, 20);
+            this.txtUrlImagen.TabIndex = 7;
+            this.txtUrlImagen.Leave += new System.EventHandler(this.txtUrlImagen_Leave);
+            // 
+            // pboxAlta
+            // 
+            this.pboxAlta.Location = new System.Drawing.Point(281, 32);
+            this.pboxAlta.Name = "pboxAlta";
+            this.pboxAlta.Size = new System.Drawing.Size(159, 160);
+            this.pboxAlta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxAlta.TabIndex = 14;
+            this.pboxAlta.TabStop = false;
             // 
             // frmAltaPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(275, 284);
+            this.ClientSize = new System.Drawing.Size(472, 276);
+            this.Controls.Add(this.pboxAlta);
+            this.Controls.Add(this.txtUrlImagen);
+            this.Controls.Add(this.lblUrlImagen);
             this.Controls.Add(this.cboxDebilidad);
             this.Controls.Add(this.cboxTipo);
             this.Controls.Add(this.lblDebilidad);
@@ -168,6 +201,7 @@ namespace Pokedex
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Pokemon";
             this.Load += new System.EventHandler(this.frmAltaPokemon_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAlta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +221,8 @@ namespace Pokedex
         private System.Windows.Forms.Label lblDebilidad;
         private System.Windows.Forms.ComboBox cboxTipo;
         private System.Windows.Forms.ComboBox cboxDebilidad;
+        private System.Windows.Forms.Label lblUrlImagen;
+        private System.Windows.Forms.TextBox txtUrlImagen;
+        private System.Windows.Forms.PictureBox pboxAlta;
     }
 }

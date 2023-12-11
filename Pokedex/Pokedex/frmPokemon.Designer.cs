@@ -41,8 +41,11 @@ namespace Pokedex
             // dgvPokemons
             // 
             this.dgvPokemons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPokemons.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPokemons.Location = new System.Drawing.Point(12, 55);
+            this.dgvPokemons.MultiSelect = false;
             this.dgvPokemons.Name = "dgvPokemons";
+            this.dgvPokemons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPokemons.Size = new System.Drawing.Size(588, 232);
             this.dgvPokemons.TabIndex = 0;
             this.dgvPokemons.SelectionChanged += new System.EventHandler(this.dgvPokemons_SelectionChanged);

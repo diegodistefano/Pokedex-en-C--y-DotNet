@@ -34,6 +34,7 @@ namespace Pokedex
                 nuevoPoke.Numero = int.Parse(txtNumero.Text);
                 nuevoPoke.Nombre = txtNombre.Text;
                 nuevoPoke.Descripcion = txtDescripcion.Text;
+                nuevoPoke.UrlImagen = txtUrlImagen.Text;
                 nuevoPoke.Tipo = (Elemento)cboxTipo.SelectedItem;
                 nuevoPoke.Debilidad = (Elemento)cboxDebilidad.SelectedItem;
 
@@ -61,5 +62,23 @@ namespace Pokedex
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtUrlImagen.Text);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pboxAlta.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                pboxAlta.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        }
+
     }
 }
