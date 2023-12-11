@@ -79,12 +79,28 @@ namespace Pokedex
 
         public void modificar(Pokemon modificar)
         {
+            try
+            {
 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void eliminar(Pokemon eliminar)
         {
+            try
+            {
 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
