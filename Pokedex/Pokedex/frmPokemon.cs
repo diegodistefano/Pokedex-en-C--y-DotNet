@@ -78,6 +78,14 @@ namespace Pokedex
             altaPokemon.ShowDialog();
             cargar();
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            
+            frmAltaPokemon modificarPokemon = new frmAltaPokemon();
+            modificarPokemon.ShowDialog();
+            cargar();
+        }
     }
 }
  
