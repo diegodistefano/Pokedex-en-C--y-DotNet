@@ -14,7 +14,13 @@ namespace Pokedex
 {
     public partial class frmAltaPokemon : Form
     {
+
         public frmAltaPokemon()
+        {
+            InitializeComponent();
+        }
+
+        public frmAltaPokemon(Pokemon seleccionado)
         {
             InitializeComponent();
         }

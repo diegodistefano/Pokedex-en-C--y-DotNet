@@ -81,8 +81,8 @@ namespace Pokedex
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            
-            frmAltaPokemon modificarPokemon = new frmAltaPokemon();
+            Pokemon seleccionado = (Pokemon)dgvElementos.CurrentRow.DataBoundItem;
+            frmAltaPokemon modificarPokemon = new frmAltaPokemon(seleccionado);
             modificarPokemon.ShowDialog();
             cargar();
         }
