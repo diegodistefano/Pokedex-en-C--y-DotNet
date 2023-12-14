@@ -26,6 +26,7 @@ namespace Pokedex
             InitializeComponent();
             this.pokemon = pokemon;
             Text = "Modificar Pokemon";
+            btnAgregar.Text = "Modificar";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace Pokedex
                 if(pokemon.Id != 0)
                 {
                     datosNegocio.modificar(pokemon);
-                    MessageBox.Show("Pokemon modificado"); 
+                    MessageBox.Show("Pokemon modificado");
                 }
                 else
                 {
