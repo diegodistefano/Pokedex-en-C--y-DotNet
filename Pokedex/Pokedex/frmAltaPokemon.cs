@@ -15,14 +15,17 @@ namespace Pokedex
     public partial class frmAltaPokemon : Form
     {
 
+        private Pokemon pokemon = null;
         public frmAltaPokemon()
         {
             InitializeComponent();
         }
 
-        public frmAltaPokemon(Pokemon seleccionado)
+        public frmAltaPokemon(Pokemon pokemon)
         {
             InitializeComponent();
+            this.pokemon = pokemon;
+            Text = "Modificar Pokemon";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -32,20 +35,31 @@ namespace Pokedex
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            PokemonDatosNegocio datosNegocio = new PokemonDatosNegocio();
+            
             try
             {
-                Pokemon nuevoPoke = new Pokemon();
-                PokemonDatosNegocio datosNegocio = new PokemonDatosNegocio();
+                if (pokemon == null)
+                    pokemon = new Pokemon();
 
-                nuevoPoke.Numero = int.Parse(txtNumero.Text);
-                nuevoPoke.Nombre = txtNombre.Text;
-                nuevoPoke.Descripcion = txtDescripcion.Text;
-                nuevoPoke.UrlImagen = txtUrlImagen.Text;
-                nuevoPoke.Tipo = (Elemento)cboxTipo.SelectedItem;
-                nuevoPoke.Debilidad = (Elemento)cboxDebilidad.SelectedItem;
+                pokemon.Numero = int.Parse(txtNumero.Text);
+                pokemon.Nombre = txtNombre.Text;
+                pokemon.Descripcion = txtDescripcion.Text;
+                pokemon.UrlImagen = txtUrlImagen.Text;
+                pokemon.Tipo = (Elemento)cboxTipo.SelectedItem;
+                pokemon.Debilidad = (Elemento)cboxDebilidad.SelectedItem;
 
-                datosNegocio.agregar(nuevoPoke);
-                MessageBox.Show("Nuevo pokemon agregado");
+                if(pokemon.Id != 0)
+                {
+                    datosNegocio.modificar(pokemon);
+                    MessageBox.Show("Pokemon modificado"); 
+                }
+                else
+                {
+                    datosNegocio.agregar(pokemon);
+                    MessageBox.Show("Pokemon agregado");
+                }
+
                 Close();
 
             }
@@ -61,7 +75,23 @@ namespace Pokedex
             try
             {
                 cboxTipo.DataSource = elementoDatos.listar();
+                cboxTipo.ValueMember = "Id";
+                cboxTipo.DisplayMember = "Descripcion";
+
                 cboxDebilidad.DataSource = elementoDatos.listar();
+                cboxDebilidad.ValueMember = "Id";
+                cboxDebilidad.DisplayMember = "Descripcion";
+
+                if (pokemon != null)
+                {
+                    txtNumero.Text = pokemon.Numero.ToString();
+                    txtNombre.Text = pokemon.Nombre;
+                    txtDescripcion.Text = pokemon.Descripcion;
+                    txtUrlImagen.Text = pokemon.UrlImagen;
+                    cargarImagen(pokemon.UrlImagen);
+                    cboxTipo.SelectedValue = pokemon.Tipo.Id;
+                    cboxDebilidad.SelectedValue = pokemon.Debilidad.Id;
+                }
             }
             catch (Exception ex)
             {
