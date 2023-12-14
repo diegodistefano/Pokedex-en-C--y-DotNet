@@ -110,16 +110,22 @@ namespace Pokedex
             }
         }
 
-        public void eliminar(Pokemon eliminar)
+        public void eliminar(int id)
         {
+            AccesoDatos datos = new AccesoDatos();
             try
             {
-
+                datos.setearConsulta("delete from POKEMONS where id = @id");
+                datos.setearParametro("@id", id);
+                datos.ejecutarAccion();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
     }
