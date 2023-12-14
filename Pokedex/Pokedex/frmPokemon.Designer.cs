@@ -39,6 +39,7 @@ namespace Pokedex
             // 
             // dgvPokemons
             // 
+            this.dgvPokemons.BackgroundColor = System.Drawing.Color.White;
             this.dgvPokemons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPokemons.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvPokemons.Location = new System.Drawing.Point(12, 55);
@@ -60,17 +61,20 @@ namespace Pokedex
             // 
             // btnAgregarPokemon
             // 
-            this.btnAgregarPokemon.Location = new System.Drawing.Point(661, 332);
+            this.btnAgregarPokemon.BackColor = System.Drawing.SystemColors.Window;
+            this.btnAgregarPokemon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarPokemon.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAgregarPokemon.Location = new System.Drawing.Point(182, 296);
             this.btnAgregarPokemon.Name = "btnAgregarPokemon";
-            this.btnAgregarPokemon.Size = new System.Drawing.Size(118, 31);
+            this.btnAgregarPokemon.Size = new System.Drawing.Size(118, 28);
             this.btnAgregarPokemon.TabIndex = 3;
             this.btnAgregarPokemon.Text = "Agregar Pokemon";
-            this.btnAgregarPokemon.UseVisualStyleBackColor = true;
+            this.btnAgregarPokemon.UseVisualStyleBackColor = false;
             this.btnAgregarPokemon.Click += new System.EventHandler(this.btnAgregarPokemon_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(661, 379);
+            this.btnModificar.Location = new System.Drawing.Point(306, 296);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(118, 28);
             this.btnModificar.TabIndex = 4;
@@ -82,7 +86,8 @@ namespace Pokedex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 498);
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(857, 377);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregarPokemon);
             this.Controls.Add(this.pbxPokemon);
