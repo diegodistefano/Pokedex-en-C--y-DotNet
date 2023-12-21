@@ -34,6 +34,11 @@ namespace Pokedex
             this.btnAgregarPokemon = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminarFisico = new System.Windows.Forms.Button();
+            this.btnEliminarLogica = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.btnFiltro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPokemon)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +70,7 @@ namespace Pokedex
             this.btnAgregarPokemon.BackColor = System.Drawing.SystemColors.Window;
             this.btnAgregarPokemon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarPokemon.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAgregarPokemon.Location = new System.Drawing.Point(182, 296);
+            this.btnAgregarPokemon.Location = new System.Drawing.Point(132, 296);
             this.btnAgregarPokemon.Name = "btnAgregarPokemon";
             this.btnAgregarPokemon.Size = new System.Drawing.Size(118, 28);
             this.btnAgregarPokemon.TabIndex = 3;
@@ -75,7 +80,7 @@ namespace Pokedex
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(306, 296);
+            this.btnModificar.Location = new System.Drawing.Point(256, 296);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(118, 28);
             this.btnModificar.TabIndex = 4;
@@ -85,7 +90,7 @@ namespace Pokedex
             // 
             // btnEliminarFisico
             // 
-            this.btnEliminarFisico.Location = new System.Drawing.Point(430, 296);
+            this.btnEliminarFisico.Location = new System.Drawing.Point(380, 296);
             this.btnEliminarFisico.Name = "btnEliminarFisico";
             this.btnEliminarFisico.Size = new System.Drawing.Size(118, 28);
             this.btnEliminarFisico.TabIndex = 5;
@@ -93,12 +98,65 @@ namespace Pokedex
             this.btnEliminarFisico.UseVisualStyleBackColor = true;
             this.btnEliminarFisico.Click += new System.EventHandler(this.btnEliminarFisico_Click);
             // 
+            // btnEliminarLogica
+            // 
+            this.btnEliminarLogica.Location = new System.Drawing.Point(504, 296);
+            this.btnEliminarLogica.Name = "btnEliminarLogica";
+            this.btnEliminarLogica.Size = new System.Drawing.Size(118, 28);
+            this.btnEliminarLogica.TabIndex = 6;
+            this.btnEliminarLogica.Text = "Eliminar Logica";
+            this.btnEliminarLogica.UseVisualStyleBackColor = true;
+            this.btnEliminarLogica.Click += new System.EventHandler(this.btnEliminarLogica_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.SystemColors.Window;
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnActualizar.Location = new System.Drawing.Point(8, 296);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(118, 28);
+            this.btnActualizar.TabIndex = 7;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(12, 36);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(32, 13);
+            this.lblFiltro.TabIndex = 8;
+            this.lblFiltro.Text = "Filtro:";
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(60, 33);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(137, 20);
+            this.txtFiltro.TabIndex = 9;
+            // 
+            // btnFiltro
+            // 
+            this.btnFiltro.Location = new System.Drawing.Point(216, 31);
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltro.TabIndex = 10;
+            this.btnFiltro.Text = "button1";
+            this.btnFiltro.UseVisualStyleBackColor = true;
+            // 
             // frmPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(857, 377);
+            this.Controls.Add(this.btnFiltro);
+            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.lblFiltro);
+            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.btnEliminarLogica);
             this.Controls.Add(this.btnEliminarFisico);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregarPokemon);
@@ -111,6 +169,7 @@ namespace Pokedex
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPokemon)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -121,6 +180,11 @@ namespace Pokedex
         private System.Windows.Forms.Button btnAgregarPokemon;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminarFisico;
+        private System.Windows.Forms.Button btnEliminarLogica;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Button btnFiltro;
     }
 }
 

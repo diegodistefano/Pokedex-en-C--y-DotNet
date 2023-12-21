@@ -88,18 +88,45 @@ namespace Pokedex
 
         private void btnEliminarFisico_Click(object sender, EventArgs e)
         {
+            eliminar();
+        }
+
+        private void btnEliminarLogica_Click(object sender, EventArgs e)
+        {
+            eliminar(true);
+        }
+
+        private void eliminar(bool logico = false)
+        {
             PokemonDatosNegocio datos = new PokemonDatosNegocio();
             Pokemon seleccionado;
             try
             {
                 DialogResult respuesta = MessageBox.Show("Estas Seguro de eliminar este Pokemon?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if(respuesta == DialogResult.Yes)
+                if (respuesta == DialogResult.Yes)
                 {
                     seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
-                    datos.eliminar(seleccionado.Id);
+                    
+                    if(logico)
+                        datos.eliminarLogico(seleccionado.Id);
+                    else
+                        datos.eliminar(seleccionado.Id);
+
                     MessageBox.Show("Pokemon eliminado");
-                    cargar();                
+                    cargar();
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cargar();
             }
             catch (Exception ex)
             {
