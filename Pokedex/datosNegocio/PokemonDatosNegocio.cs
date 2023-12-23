@@ -73,10 +73,10 @@ namespace Pokedex
                 {
                     switch (criterio)
                     {
-                        case "Mayor a":
+                        case "Mayor a:":
                             consulta += "Numero > " + filtro;
                             break;
-                        case "Menor a":
+                        case "Menor a:":
                             consulta += "Numero < " + filtro;
                             break;
                         default:
@@ -88,10 +88,10 @@ namespace Pokedex
                 {
                     switch (criterio)
                     {
-                        case "Comienza con":
+                        case "Comienza con:":
                             consulta += "Nombre like '" + filtro + "%' ";
                             break;
-                        case "Termina con":
+                        case "Termina con:":
                             consulta += "Nombre like '%" + filtro + "'";
                             break;
                         default:
@@ -103,10 +103,10 @@ namespace Pokedex
                 {
                     switch (criterio)
                     {
-                        case "Comienza con":
+                        case "Comienza con:":
                             consulta += "P.Descripcion like '" + filtro + "%' ";
                             break;
-                        case "Termina con":
+                        case "Termina con:":
                             consulta += "P.Descripcion like '%" + filtro + "'";
                             break;
                         default:
