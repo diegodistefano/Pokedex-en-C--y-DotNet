@@ -14,15 +14,18 @@ namespace Pokedex
             InitializeComponent();
         }
 
-        private List<Elemento> listaElementos;
+        //private List<Elemento> listaElementos;
 
 
         private void frmPokemon_Load(object sender, EventArgs e)
         {
             cargar();
+            cBoxCampo.Items.Add("Número");
+            cBoxCampo.Items.Add("Nombre");
+            cBoxCampo.Items.Add("Descripcion");
 
-            ElementoDatosNegocio elementoDatos = new ElementoDatosNegocio();
-            listaElementos = elementoDatos.listar();
+            //ElementoDatosNegocio elementoDatos = new ElementoDatosNegocio();
+            //listaElementos = elementoDatos.listar();
             //dgvElementos.DataSource = listaElementos;
         }
 
@@ -151,7 +154,23 @@ namespace Pokedex
 
         private void btnFiltro_Click(object sender, EventArgs e)
         {
-            List<Pokemon> listaFiltrada;
+            PokemonDatosNegocio negocio = new PokemonDatosNegocio();
+            try
+            {
+                string campo = cBoxCampo.SelectedItem.ToString();
+                string criterio = cBoxCriterio.SelectedItem.ToString();
+                string filtroAvanzado = txtFiltroAvanzado.Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+             List<Pokemon> listaFiltrada;
             string filtro = txtFiltro.Text;
 
             if (filtro != "")
@@ -167,7 +186,26 @@ namespace Pokedex
             dgvPokemons.DataSource = listaFiltrada;
 
             ocultarColumnas();
+        }
 
+        private void cBoxCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cBoxCampo.SelectedItem.ToString();
+
+            if (opcion == "Número")
+            {
+                cBoxCriterio.Items.Clear();
+                cBoxCriterio.Items.Add("Mayor a:");
+                cBoxCriterio.Items.Add("Menor a:");
+                cBoxCriterio.Items.Add("Igual a:");
+            }
+            else
+            {
+                cBoxCriterio.Items.Clear();
+                cBoxCriterio.Items.Add("Comienza con:");
+                cBoxCriterio.Items.Add("Termina con:");
+                cBoxCriterio.Items.Add("Contiene:");
+            }
         }
     }
 }
