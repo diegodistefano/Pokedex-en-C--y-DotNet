@@ -9,13 +9,12 @@ namespace Pokedex
     public partial class frmPokemon : Form
     {
         private List<Pokemon> listaPokemon;
+        //private List<Elemento> listaElementos;
+                
         public frmPokemon()
         {
             InitializeComponent();
         }
-
-        //private List<Elemento> listaElementos;
-
 
         private void frmPokemon_Load(object sender, EventArgs e)
         {
@@ -38,13 +37,11 @@ namespace Pokedex
             }
         }
 
-
         //private void dgvElementos_SelectionChanged(object sender, EventArgs e)
         //{
         //    Pokemon seleccionado = (Pokemon)dgvElementos.CurrentRow.DataBoundItem;
         //    cargarImagen(seleccionado.UrlImagen);
         //}
-
 
         private void cargar()
         {
@@ -86,6 +83,32 @@ namespace Pokedex
                 pbxPokemon.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }
         }
+        
+        private void eliminar(bool logico = false)
+        {
+            PokemonDatosNegocio datos = new PokemonDatosNegocio();
+            Pokemon seleccionado;
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Estas Seguro de eliminar este Pokemon?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
+                    
+                    if(logico)
+                        datos.eliminarLogico(seleccionado.Id);
+                    else
+                        datos.eliminar(seleccionado.Id);
+
+                    MessageBox.Show("Pokemon eliminado");
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
         private void btnAgregarPokemon_Click(object sender, EventArgs e)
         {
@@ -114,32 +137,6 @@ namespace Pokedex
             eliminar(true);
         }
 
-        private void eliminar(bool logico = false)
-        {
-            PokemonDatosNegocio datos = new PokemonDatosNegocio();
-            Pokemon seleccionado;
-            try
-            {
-                DialogResult respuesta = MessageBox.Show("Estas Seguro de eliminar este Pokemon?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (respuesta == DialogResult.Yes)
-                {
-                    seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
-                    
-                    if(logico)
-                        datos.eliminarLogico(seleccionado.Id);
-                    else
-                        datos.eliminar(seleccionado.Id);
-
-                    MessageBox.Show("Pokemon eliminado");
-                    cargar();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             try
@@ -159,7 +156,8 @@ namespace Pokedex
             {
                 string campo = cBoxCampo.SelectedItem.ToString();
                 string criterio = cBoxCriterio.SelectedItem.ToString();
-                string filtroAvanzado = txtFiltroAvanzado.Text;
+                string filtro = txtFiltroAvanzado.Text;
+                dgvPokemons.DataSource = negocio.filtrar(campo, criterio, filtro);
             }
             catch (Exception ex)
             {
