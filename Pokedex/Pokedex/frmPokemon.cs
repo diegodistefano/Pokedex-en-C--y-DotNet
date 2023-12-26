@@ -110,6 +110,49 @@ namespace Pokedex
             }
         }
 
+        private bool validarFiltro()
+        {
+            if (cBoxCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un campo");
+                return true;
+            }
+            if (cBoxCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un criterio");
+                return true;
+            }
+
+            if (cBoxCampo.SelectedItem.ToString() == "Número")
+            {
+                if (string.IsNullOrEmpty(txtFiltroAvanzado.Text))
+                {
+                    MessageBox.Show("Ingrese un valor numerico");
+                    return true;
+                }
+                if (!(soloNumeros(txtFiltroAvanzado.Text)))
+                {
+                    MessageBox.Show("Ingrese un valor numerico");
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool soloNumeros(string cadena) 
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
         private void btnAgregarPokemon_Click(object sender, EventArgs e)
         {
             frmAltaPokemon altaPokemon = new frmAltaPokemon();
@@ -154,10 +197,12 @@ namespace Pokedex
             PokemonDatosNegocio negocio = new PokemonDatosNegocio();
             try
             {
+                validarFiltro();
                 string campo = cBoxCampo.SelectedItem.ToString();
                 string criterio = cBoxCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroAvanzado.Text;
                 dgvPokemons.DataSource = negocio.filtrar(campo, criterio, filtro);
+                
             }
             catch (Exception ex)
             {
