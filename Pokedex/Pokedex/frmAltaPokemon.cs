@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using pokeDominio;
 using datosNegocio;
+using System.IO;
+using System.Configuration;
 
 namespace Pokedex
 {
@@ -16,6 +18,9 @@ namespace Pokedex
     {
 
         private Pokemon pokemon = null;
+
+        private OpenFileDialog archivo = null;
+
         public frmAltaPokemon()
         {
             InitializeComponent();
@@ -60,6 +65,9 @@ namespace Pokedex
                     datosNegocio.agregar(pokemon);
                     MessageBox.Show("Pokemon agregado");
                 }
+
+                if (archivo != null && !(txtUrlImagen.Text.ToUpper().Contains("HTTP")));
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
 
                 Close();
 
@@ -117,5 +125,16 @@ namespace Pokedex
             }
         }
 
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "png|*.png|jpeg|*.jpeg|jpg|*.jpg";
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtUrlImagen.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
+
+            }
+        }
     }
 }
